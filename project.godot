@@ -1,0 +1,99 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "SceneRenderer",
+"class": "Coordinate2DRenderer",
+"language": "GDScript",
+"path": "res://Object/2DCoordinateRenderer.gd"
+}, {
+"base": "SceneObject",
+"class": "Function2D",
+"language": "GDScript",
+"path": "res://Object/2DFunctionObject.gd"
+}, {
+"base": "SceneObject",
+"class": "ImageObject",
+"language": "GDScript",
+"path": "res://Object/ImageObject.gd"
+}, {
+"base": "SceneRenderer",
+"class": "Plane2DRenderer",
+"language": "GDScript",
+"path": "res://Object/PlaneRenderer.gd"
+}, {
+"base": "SceneObject",
+"class": "Point2D",
+"language": "GDScript",
+"path": "res://Object/2DPointObject.gd"
+}, {
+"base": "Node",
+"class": "SceneObject",
+"language": "GDScript",
+"path": "res://Object/SceneObject.gd"
+}, {
+"base": "Node2D",
+"class": "SceneRenderer",
+"language": "GDScript",
+"path": "res://Object/SceneRenderer.gd"
+}, {
+"base": "SceneObject",
+"class": "TextObject",
+"language": "GDScript",
+"path": "res://Object/TextObject.gd"
+}, {
+"base": "SceneRenderer",
+"class": "VBoxRenderer",
+"language": "GDScript",
+"path": "res://Object/VboxRenderer.gd"
+} ]
+_global_script_class_icons={
+"Coordinate2DRenderer": "",
+"Function2D": "",
+"ImageObject": "",
+"Plane2DRenderer": "",
+"Point2D": "",
+"SceneObject": "",
+"SceneRenderer": "",
+"TextObject": "",
+"VBoxRenderer": ""
+}
+
+[application]
+
+config/name="checkVM"
+run/main_scene="res://Node2D.tscn"
+config/icon="res://icon.png"
+
+[debug]
+
+settings/fps/force_fps=120
+settings/stdout/print_fps=true
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1920
+window/size/test_height=1080
+window/dpi/allow_hidpi=true
+window/vsync/use_vsync=false
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+quality/filters/anisotropic_filter_level=2
+quality/filters/use_nearest_mipmap_filter=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+quality/filters/msaa=3
+environment/default_environment="res://default_env.tres"

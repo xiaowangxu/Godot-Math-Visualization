@@ -1,0 +1,353 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Object/2DCoordinateRenderer.gd" type="Script" id=1]
+[ext_resource path="res://Object/2DFunctionObject.gd" type="Script" id=2]
+[ext_resource path="res://Resource/2DFunction.gd" type="Script" id=3]
+[ext_resource path="res://Font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Resource/2DFunction2.gd" type="Script" id=5]
+[ext_resource path="res://Object/2DPointObject.gd" type="Script" id=6]
+[ext_resource path="res://Resource/2DFunction3.gd" type="Script" id=7]
+[ext_resource path="res://Object/TextObject.gd" type="Script" id=8]
+[ext_resource path="res://CENSCBK.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://Node2D.gd" type="Script" id=10]
+[ext_resource path="res://Object/PlaneRenderer.gd" type="Script" id=11]
+[ext_resource path="res://SCHLBKI.TTF" type="DynamicFontData" id=12]
+[ext_resource path="res://Object/VboxRenderer.gd" type="Script" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=4]
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Coordinate2DObject:Scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2, 3.5, 14, 14.5 ),
+"transitions": PoolRealArray( -2, -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 80, 80 ), Vector2( 200, 200 ), Vector2( 200, 200 ), Vector2( 100, 100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Coordinate2DObject/Point2D:Position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2, 3, 6 ),
+"transitions": PoolRealArray( 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( -4, 1 ), Vector2( -3, 1 ), Vector2( 2, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Coordinate2DObject/Function2D:LineColor")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 6, 6.5, 12.5, 13.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.87451, 0.270588, 0.270588, 1 ), Color( 0.87451, 0.270588, 0.270588, 1 ), Color( 0.87451, 0.270588, 0.270588, 0 ), Color( 0.87451, 0.270588, 0.270588, 0 ), Color( 0.87451, 0.270588, 0.270588, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Coordinate2DObject/Function2D2:LineColor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2, 3, 3.5, 9.5, 13.5 ),
+"transitions": PoolRealArray( -2, -2, 0, -2, -2 ),
+"update": 0,
+"values": [ Color( 0.294118, 0.647059, 0.364706, 1 ), Color( 0.294118, 0.647059, 0.364706, 1 ), Color( 0.294118, 0.647059, 0.364706, 0 ), Color( 0.294118, 0.647059, 0.364706, 1 ), Color( 0.294118, 0.647059, 0.364706, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Coordinate2DObject/Function2D3:LineColor")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2, 3, 3.5, 6.5, 9, 9.5, 12.5, 13.5 ),
+"transitions": PoolRealArray( -2, -2, 0, 1, 1, 1, 1, -2 ),
+"update": 0,
+"values": [ Color( 1, 0.698039, 0, 1 ), Color( 1, 0.698039, 0, 1 ), Color( 1, 0.698039, 0, 0 ), Color( 1, 0.698039, 0, 1 ), Color( 1, 0.698039, 0, 1 ), Color( 1, 0.698039, 0, 0 ), Color( 1, 0.698039, 0, 0 ), Color( 1, 0.698039, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Coordinate2DObject/Point2D:PointColor")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2, 3.5, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Coordinate2DObject:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Plane2DRenderer/VBoxRenderer/TextObject4:Percentage")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Coordinate2DObject/TextObject2:Percentage")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 3.5, 4, 6, 6.5, 12.5, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0, 0.0, 1.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Coordinate2DObject/TextObject:Percentage")
+tracks/9/interp = 1
+tracks/9/loop_wrap = false
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 6.5, 7, 9, 9.5, 12.5, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0, 0.0, 1.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Coordinate2DObject/TextObject3:Percentage")
+tracks/10/interp = 1
+tracks/10/loop_wrap = false
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 9.5, 10, 13.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Coordinate2DObject/Function2D2:FunctionRange")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 3.5, 9.5, 11.9 ),
+"transitions": PoolRealArray( 0, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( -100, 100 ), Vector2( -100, -10 ), Vector2( -100, -5 ), Vector2( -100, 5 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Coordinate2DObject/Function2D3:FunctionRange")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 3.5, 6.5, 9 ),
+"transitions": PoolRealArray( 0, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -100, 100 ), Vector2( -100, -10 ), Vector2( -100, -5 ), Vector2( -100, 5 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Coordinate2DObject:Rect")
+tracks/13/interp = 1
+tracks/13/loop_wrap = false
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 14, 14.5 ),
+"transitions": PoolRealArray( 1, -2, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 1820, 980 ), Rect2( 0, 0, 1820, 980 ), Rect2( 0, 0, 1000, 600 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Coordinate2DObject:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = false
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 14, 14.5 ),
+"transitions": PoolRealArray( 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 50, 50 ), Vector2( 50, 50 ), Vector2( 100, 320 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Coordinate2DObject:Center")
+tracks/15/interp = 1
+tracks/15/loop_wrap = false
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 14, 14.5 ),
+"transitions": PoolRealArray( 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 909.997, 490 ), Vector2( 909.997, 490 ), Vector2( 500, 300 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Plane2DRenderer/VBoxRenderer/TextObject5:Percentage")
+tracks/16/interp = 1
+tracks/16/loop_wrap = false
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0.8, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Plane2DRenderer" type="Node2D" parent="."]
+script = ExtResource( 11 )
+Rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="VBoxRenderer" type="Node2D" parent="Plane2DRenderer"]
+position = Vector2( 80, 80 )
+script = ExtResource( 13 )
+Rect = Rect2( 0, 0, 690, 170 )
+Clip = false
+
+[node name="TextObject4" type="Node" parent="Plane2DRenderer/VBoxRenderer"]
+script = ExtResource( 8 )
+TextFont = SubResource( 1 )
+Text = "ActiveFunction"
+VAlign = 0
+
+[node name="TextObject5" type="Node" parent="Plane2DRenderer/VBoxRenderer"]
+script = ExtResource( 8 )
+TextFont = SubResource( 2 )
+Text = "BY wxxf"
+VAlign = 0
+
+[node name="Coordinate2DObject" type="Node2D" parent="."]
+position = Vector2( 50, 50 )
+script = ExtResource( 1 )
+Rect = Rect2( 0, 0, 1820, 980 )
+Center = Vector2( 909.997, 490 )
+Scale = Vector2( 200, 200 )
+LineWidth = 1.0
+RuleWidth = 30.0
+RuleFont = ExtResource( 4 )
+
+[node name="Function2D" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 2 )
+Function = ExtResource( 3 )
+StepCount = 1000
+LineWidth = 3.0
+LineColor = Color( 0.87451, 0.270588, 0.270588, 1 )
+
+[node name="Function2D2" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 2 )
+Function = ExtResource( 5 )
+FunctionRange = Vector2( -100, -9.75 )
+StepCount = 1000
+LineWidth = 3.0
+LineColor = Color( 0.294118, 0.647059, 0.364706, 0 )
+
+[node name="Function2D3" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 2 )
+Function = ExtResource( 7 )
+FunctionRange = Vector2( -100, -9.5 )
+StepCount = 1000
+LineWidth = 3.0
+LineColor = Color( 1, 0.698039, 0, 0 )
+
+[node name="Point2D" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 6 )
+Type = 1
+Function = ExtResource( 3 )
+Position = Vector2( -2.28889, 1 )
+PointColor = Color( 1, 1, 1, 1 )
+
+[node name="TextObject" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 8 )
+TextFont = SubResource( 3 )
+Text = "Relu"
+Position = Vector2( 2.542, 2.026 )
+TextColor = Color( 1, 0.698039, 0, 1 )
+Percentage = 0.0
+
+[node name="TextObject2" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 8 )
+TextFont = SubResource( 3 )
+Text = "tanh"
+Position = Vector2( -4.34, -1.331 )
+TextColor = Color( 0.87451, 0.270588, 0.270588, 1 )
+Percentage = 0.6
+
+[node name="TextObject3" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 8 )
+TextFont = SubResource( 3 )
+Text = "sigmoid"
+Position = Vector2( -3.253, 0.347 )
+TextColor = Color( 0.294118, 0.647059, 0.364706, 1 )
+Percentage = 0.0
+
+[node name="VBoxRenderer4" type="Node2D" parent="."]
+position = Vector2( 502.219, 735.931 )
+script = ExtResource( 13 )
+Rect = Rect2( 0, 0, 272, 98 )
+Clip = false
+
+[node name="TextObject5" type="Node" parent="VBoxRenderer4"]
+script = ExtResource( 8 )
+TextFont = SubResource( 2 )
+Text = "Point"
+VAlign = 0
+
+[node name="TextObject6" type="Node" parent="VBoxRenderer4"]
+script = ExtResource( 8 )
+TextFont = SubResource( 2 )
+Text = "(-2.289, -0.980)"
+VAlign = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "新建动画"
+"anims/新建动画" = SubResource( 4 )
+[connection signal="Position_changed" from="Coordinate2DObject/Point2D" to="." method="_on_Point2D_Position_changed"]
