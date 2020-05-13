@@ -1,8 +1,9 @@
 [gd_resource type="Theme" load_steps=4 format=2]
 
-[ext_resource path="res://FiraCode-Medium.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Font/FiraCode-Medium.otf" type="DynamicFontData" id=1]
 
-[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 24.0
 content_margin_right = 24.0
 content_margin_top = 50.0
@@ -17,12 +18,12 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 1 )
+default_font = SubResource( 2 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -133,7 +134,7 @@ GraphNode/styles/comment = null
 GraphNode/styles/commentfocus = null
 GraphNode/styles/defaultfocus = null
 GraphNode/styles/defaultframe = null
-GraphNode/styles/frame = SubResource( 2 )
+GraphNode/styles/frame = SubResource( 1 )
 GraphNode/styles/position = null
 GraphNode/styles/selectedframe = null
 GridContainer/constants/hseparation = 4

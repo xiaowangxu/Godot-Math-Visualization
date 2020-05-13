@@ -81,7 +81,16 @@ func _draw() -> void:
 		elif child as SceneRenderer:
 			child.update()
 	pass
+
+func get_LocalPosition(position : Vector2) -> Vector2:
+	return Center + Vector2(position.x * Scale.x, - position.y * Scale.y)
 	
+func get_AbosulteLocalPosition(position : Vector2) -> Vector2:
+	return Vector2(position.x * Scale.x, - position.y * Scale.y)	
+
+func get_Canvas_Scale() -> Vector2:
+	return Scale
+
 func set_Scale(scale : Vector2) -> void:
 	if scale.x <= 0:
 		Scale.x = 1

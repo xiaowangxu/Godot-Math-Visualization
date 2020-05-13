@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Resource/Linear.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+w1 = 1.0
+w2 = 1.0
+b = 1.0

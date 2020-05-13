@@ -2,7 +2,7 @@ extends SceneObject
 
 tool
 
-class_name Function2D
+class_name Function2DObject
 
 export var Function : Resource
 export var FunctionRange : Vector2 = Vector2(-100,100)

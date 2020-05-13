@@ -32,6 +32,18 @@ func set_Clip(clip : bool) -> void:
 	update_Renderer()
 	pass
 
+func get_Canvas() -> SceneRenderer:
+	return self
+
+func get_Canvas_Scale() -> Vector2:
+	return Vector2(1.0, -1.0)
+	
+func get_Canvas_Rect() -> Rect2:
+	return Rect
+
+func get_Canvas_Center() -> Vector2:
+	return Center
+
 func update_Renderer() -> void:
 	var Parent = self.get_parent()
 	if Parent as SceneRenderer:

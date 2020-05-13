@@ -9,13 +9,23 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "SceneObject",
+"class": "Circle2DObject",
+"language": "GDScript",
+"path": "res://Object/2DCircleObject.gd"
+}, {
 "base": "SceneRenderer",
 "class": "Coordinate2DRenderer",
 "language": "GDScript",
 "path": "res://Object/2DCoordinateRenderer.gd"
 }, {
+"base": "Resource",
+"class": "Function2DLine",
+"language": "GDScript",
+"path": "res://Resource/Linear.gd"
+}, {
 "base": "SceneObject",
-"class": "Function2D",
+"class": "Function2DObject",
 "language": "GDScript",
 "path": "res://Object/2DFunctionObject.gd"
 }, {
@@ -24,13 +34,18 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Object/ImageObject.gd"
 }, {
+"base": "SceneObject",
+"class": "Line2DObject",
+"language": "GDScript",
+"path": "res://Object/2DLineObject.gd"
+}, {
 "base": "SceneRenderer",
 "class": "Plane2DRenderer",
 "language": "GDScript",
 "path": "res://Object/PlaneRenderer.gd"
 }, {
 "base": "SceneObject",
-"class": "Point2D",
+"class": "Point2DObject",
 "language": "GDScript",
 "path": "res://Object/2DPointObject.gd"
 }, {
@@ -53,29 +68,38 @@ _global_script_classes=[ {
 "class": "VBoxRenderer",
 "language": "GDScript",
 "path": "res://Object/VboxRenderer.gd"
+}, {
+"base": "Line2DObject",
+"class": "Vector2DObject",
+"language": "GDScript",
+"path": "res://Object/2DVectorObject.gd"
 } ]
 _global_script_class_icons={
+"Circle2DObject": "",
 "Coordinate2DRenderer": "",
-"Function2D": "",
+"Function2DLine": "",
+"Function2DObject": "",
 "ImageObject": "",
+"Line2DObject": "",
 "Plane2DRenderer": "",
-"Point2D": "",
+"Point2DObject": "",
 "SceneObject": "",
 "SceneRenderer": "",
 "TextObject": "",
-"VBoxRenderer": ""
+"VBoxRenderer": "",
+"Vector2DObject": ""
 }
 
 [application]
 
-config/name="checkVM"
+config/name="Godot Math Visualization"
 run/main_scene="res://Node2D.tscn"
 config/icon="res://icon.png"
 
 [debug]
 
-settings/fps/force_fps=120
 settings/stdout/print_fps=true
+gdscript/completion/autocomplete_setters_and_getters=true
 
 [display]
 
@@ -84,7 +108,6 @@ window/size/height=1080
 window/size/test_width=1920
 window/size/test_height=1080
 window/dpi/allow_hidpi=true
-window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

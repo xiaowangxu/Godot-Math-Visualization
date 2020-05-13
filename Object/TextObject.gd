@@ -52,7 +52,7 @@ func draw(canvas : Node2D, rect : Rect2, scale : Vector2, center : Vector2) -> v
 		var posx : float = 0
 		for i in range(0, ceil(Text.length() * Percentage)):
 			var currentchar : String = Text.substr(i, 1)
-			if currentchar == '\n':
+			if currentchar == '\n' or currentchar.length() < 1:
 				objectrect.position.y += TextFont.get_height()
 				posx = 0
 				continue
