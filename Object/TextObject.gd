@@ -41,6 +41,7 @@ func get_Rect(canvas : Node2D, rect : Rect2, scale : Vector2, center : Vector2) 
 	
 
 func draw(canvas : Node2D, rect : Rect2, scale : Vector2, center : Vector2) -> void:
+#	print(">> Text")
 	var objectrect : Rect2 = get_Rect(canvas, rect, scale, center)
 	objectrect.position.y += TextFont.get_ascent()
 	if Engine.editor_hint:

@@ -28,9 +28,16 @@ position = Vector2( 50, 50 )
 script = ExtResource( 1 )
 Rect = Rect2( 0, 0, 1820, 980 )
 Center = Vector2( 909.997, 490 )
+Clip = true
 Scale = Vector2( 150, 150 )
 LineWidth = 1.0
 RuleWidth = 30.0
+LineColor = Color( 1, 1, 1, 1 )
+Aspect = Vector2( 1, 1 )
+AspectXUnit = ""
+AspectYUnit = ""
+RemainLineX = true
+RemainLineY = true
 RuleFont = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

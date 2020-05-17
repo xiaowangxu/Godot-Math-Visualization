@@ -12,6 +12,7 @@
 [ext_resource path="res://Object/2DCoordinateRenderer.gd" type="Script" id=10]
 [ext_resource path="res://Linear.tres" type="Resource" id=11]
 [ext_resource path="res://Object/2DFunctionObject.gd" type="Script" id=12]
+[ext_resource path="res://Object/2DPointObject.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -24,33 +25,6 @@ size = 30
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 7 )
-
-[sub_resource type="Animation" id=3]
-length = 1.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Plane2DRenderer/TextObject:Percentage")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( -2, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Plane2DRenderer/Plane2DRenderer2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5 ),
-"transitions": PoolRealArray( 1, -2, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -65,158 +39,18 @@ Clip = true
 script = ExtResource( 2 )
 TextFont = SubResource( 1 )
 Text = "percentron"
-HAlign = 0
 VAlign = 0
 Position = Vector2( 100, 40 )
-TextColor = Color( 1, 1, 1, 1 )
-Percentage = 1.0
 
-[node name="Plane2DRenderer2" type="Node2D" parent="Plane2DRenderer"]
-position = Vector2( 100, 180 )
-script = ExtResource( 3 )
-Rect = Rect2( 0, 0, 1720, 800 )
-Center = Vector2( 0, 0 )
-Clip = true
-
-[node name="Plane2DRenderer" type="Node2D" parent="Plane2DRenderer/Plane2DRenderer2"]
-position = Vector2( 460, 260 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-Rect = Rect2( 0, 0, 360, 240 )
-Center = Vector2( 0, 0 )
-Clip = false
-
-[node name="VBoxRenderer" type="Node2D" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 4 )
-Rect = Rect2( 0, 0, 80, 240 )
-Center = Vector2( 0, 0 )
-Clip = false
-HAlign = 1
-
-[node name="Circle2DObject" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer/VBoxRenderer"]
-script = ExtResource( 5 )
-Position = Vector2( 40, 40 )
-Radius = 40.0
-LineColor = Color( 1, 1, 1, 1 )
-
-[node name="Circle2DObject2" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer/VBoxRenderer"]
-script = ExtResource( 5 )
-Position = Vector2( 40, 120 )
-Radius = 40.0
-LineColor = Color( 1, 1, 1, 1 )
-
-[node name="VBoxRenderer2" type="Node2D" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-position = Vector2( 160, 80 )
-script = ExtResource( 4 )
-Rect = Rect2( 0, 0, 80, 80 )
-Center = Vector2( 0, 0 )
-Clip = false
-HAlign = 1
-
-[node name="Circle2DObject" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer/VBoxRenderer2"]
-script = ExtResource( 5 )
-Position = Vector2( 40, 40 )
-Radius = 40.0
-LineColor = Color( 1, 1, 1, 1 )
-
-[node name="Vector2DObject" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 6 )
-PositionFrom = Vector2( 40, 40 )
-PositionTo = Vector2( 200, 120 )
-LineWidth = 3.0
-LineColor = Color( 0.87451, 0.270588, 0.270588, 1 )
-TipWidth = 16.0
-HoldBack = Vector2( 41.5, 41.5 )
-
-[node name="Vector2DObject2" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 6 )
-PositionFrom = Vector2( 40, 200 )
-PositionTo = Vector2( 200, 120 )
-LineWidth = 3.0
-LineColor = Color( 0.294118, 0.647059, 0.364706, 1 )
-TipWidth = 16.0
-HoldBack = Vector2( 41.5, 41.5 )
-
-[node name="Vector2DObject3" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 6 )
-PositionFrom = Vector2( 240, 120 )
-PositionTo = Vector2( 400, 120 )
-LineWidth = 3.0
-LineColor = Color( 1, 1, 1, 1 )
-TipWidth = 16.0
-HoldBack = Vector2( 0, 41.5 )
-
-[node name="TextObject2" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 2 )
-TextFont = SubResource( 2 )
-Text = "0.00"
-HAlign = 1
-VAlign = 1
-Position = Vector2( 40, 40 )
-TextColor = Color( 1, 1, 1, 1 )
-Percentage = 1.0
-
-[node name="TextObject3" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 2 )
-TextFont = SubResource( 2 )
-Text = "1.00"
-HAlign = 1
-VAlign = 1
-Position = Vector2( 40, 200 )
-TextColor = Color( 1, 1, 1, 1 )
-Percentage = 1.0
-
-[node name="TextObject4" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 2 )
-TextFont = SubResource( 2 )
-Text = "1.00"
-HAlign = 1
-VAlign = 1
-Position = Vector2( 200, 120 )
-TextColor = Color( 1, 1, 1, 1 )
-Percentage = 1.0
-
-[node name="TextObject7" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 2 )
-TextFont = SubResource( 2 )
-Text = "1.00"
-HAlign = 1
-VAlign = 1
-Position = Vector2( 130, 40 )
-TextColor = Color( 0.87451, 0.270588, 0.270588, 1 )
-Percentage = 1.0
-
-[node name="TextObject6" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 2 )
-TextFont = SubResource( 2 )
-Text = "1.00"
-HAlign = 1
-VAlign = 1
-Position = Vector2( 130, 200 )
-TextColor = Color( 0.294118, 0.647059, 0.364706, 1 )
-Percentage = 1.0
-
-[node name="TextObject5" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Plane2DRenderer"]
-script = ExtResource( 2 )
-TextFont = SubResource( 2 )
-Text = "1.00"
-HAlign = 1
-VAlign = 1
-Position = Vector2( 200, 190 )
-TextColor = Color( 1, 1, 1, 1 )
-Percentage = 1.0
-
-[node name="Coordinate2DRenderer" type="Node2D" parent="Plane2DRenderer/Plane2DRenderer2"]
-position = Vector2( 1060, 140 )
+[node name="Coordinate2DRenderer" type="Node2D" parent="Plane2DRenderer"]
+position = Vector2( 1046.35, 223.247 )
 script = ExtResource( 10 )
-Rect = Rect2( 0, 0, 500, 500 )
-Center = Vector2( 100, 400 )
+Rect = Rect2( 0, 0, 700, 700 )
+Center = Vector2( 250, 450 )
 Clip = true
-Scale = Vector2( 180, 180 )
+Scale = Vector2( 190, 190 )
 LineWidth = 1.0
-RuleWidth = 10.0
+RuleWidth = 15.0
 LineColor = Color( 1, 1, 1, 1 )
 Aspect = Vector2( 1, 1 )
 AspectXUnit = ""
@@ -225,7 +59,7 @@ RemainLineX = true
 RemainLineY = true
 RuleFont = ExtResource( 9 )
 
-[node name="Function2D" type="Node" parent="Plane2DRenderer/Plane2DRenderer2/Coordinate2DRenderer"]
+[node name="Function2D" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
 script = ExtResource( 12 )
 Function = ExtResource( 11 )
 FunctionRange = Vector2( -100, 100 )
@@ -233,15 +67,199 @@ StepCount = 100
 LineWidth = 3.0
 LineColor = Color( 1, 0.698039, 0, 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "新建动画"
-"anims/新建动画" = SubResource( 3 )
+[node name="Point2DObject" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 13 )
+Type = 0
+Function = null
+Position = Vector2( 0, 0 )
+Radius = 10.0
+PointColor = Color( 1, 1, 0, 1 )
+
+[node name="TextObject" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "(0,0)"
+HAlign = 2
+VAlign = 0
+Position = Vector2( -0.1, -0.1 )
+
+[node name="Point2DObject2" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 13 )
+Type = 0
+Function = null
+Position = Vector2( 1, 0 )
+Radius = 10.0
+PointColor = Color( 1, 1, 0, 1 )
+
+[node name="TextObject2" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "(1,0)"
+VAlign = 0
+Position = Vector2( 1.1, -0.1 )
+
+[node name="Point2DObject3" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 13 )
+Type = 0
+Function = null
+Position = Vector2( 0, 1 )
+Radius = 10.0
+PointColor = Color( 1, 1, 0, 1 )
+
+[node name="TextObject3" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "(0,1)"
+HAlign = 2
+Position = Vector2( -0.1, 1.1 )
+
+[node name="Point2DObject4" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 13 )
+Type = 0
+Function = null
+Position = Vector2( 1, 1 )
+Radius = 10.0
+PointColor = Color( 1, 1, 0, 1 )
+
+[node name="TextObject4" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "(1,1)"
+Position = Vector2( 1.1, 1.1 )
+
+[node name="VBoxRenderer" type="Node2D" parent="Plane2DRenderer"]
+position = Vector2( 457.872, 449.215 )
+script = ExtResource( 4 )
+Rect = Rect2( 0, 0, 80, 240 )
+Center = Vector2( 0, 0 )
+Clip = false
+HAlign = 1
+
+[node name="Circle2DObject" type="Node" parent="Plane2DRenderer/VBoxRenderer"]
+script = ExtResource( 5 )
+Position = Vector2( 40, 40 )
+Radius = 40.0
+LineColor = Color( 1, 1, 1, 1 )
+Fill = true
+FillColor = Color( 0, 0, 0, 1 )
+
+[node name="Circle2DObject2" type="Node" parent="Plane2DRenderer/VBoxRenderer"]
+script = ExtResource( 5 )
+Position = Vector2( 40, 120 )
+Radius = 40.0
+LineColor = Color( 1, 1, 1, 1 )
+Fill = true
+FillColor = Color( 1, 1, 1, 1 )
+
+[node name="VBoxRenderer2" type="Node2D" parent="Plane2DRenderer"]
+position = Vector2( 617.872, 529.215 )
+script = ExtResource( 4 )
+Rect = Rect2( 0, 0, 80, 80 )
+Center = Vector2( 0, 0 )
+Clip = false
+HAlign = 1
+
+[node name="Circle2DObject" type="Node" parent="Plane2DRenderer/VBoxRenderer2"]
+script = ExtResource( 5 )
+Position = Vector2( 40, 40 )
+Radius = 40.0
+LineColor = Color( 1, 1, 1, 1 )
+Fill = true
+FillColor = Color( 0, 0, 0, 1 )
+
+[node name="Plane2DRenderer" type="Node2D" parent="Plane2DRenderer"]
+position = Vector2( 457.872, 449.215 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+Rect = Rect2( 0, 0, 360, 240 )
+Center = Vector2( 0, 0 )
+Clip = false
+
+[node name="Vector2DObject" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 6 )
+PositionFrom = Vector2( 40, 40 )
+PositionTo = Vector2( 200, 120 )
+LineWidth = 3.0
+LineColor = Color( 0.87451, 0.270588, 0.270588, 1 )
+TipWidth = 16.0
+HoldBack = Vector2( 41.5, 41.5 )
+
+[node name="Vector2DObject2" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 6 )
+PositionFrom = Vector2( 40, 200 )
+PositionTo = Vector2( 200, 120 )
+LineWidth = 3.0
+LineColor = Color( 0.294118, 0.647059, 0.364706, 1 )
+TipWidth = 16.0
+HoldBack = Vector2( 41.5, 41.5 )
+
+[node name="Vector2DObject3" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 6 )
+PositionFrom = Vector2( 240, 120 )
+PositionTo = Vector2( 400, 120 )
+LineWidth = 3.0
+LineColor = Color( 1, 1, 1, 1 )
+TipWidth = 16.0
+HoldBack = Vector2( 0, 41.5 )
+
+[node name="TextObject2" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "0.00"
+HAlign = 1
+VAlign = 1
+Position = Vector2( 40, 40 )
+
+[node name="TextObject3" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "1.00"
+HAlign = 1
+VAlign = 1
+Position = Vector2( 40, 200 )
+TextColor = Color( 0, 0, 0, 1 )
+
+[node name="TextObject4" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "1.00"
+HAlign = 1
+VAlign = 1
+Position = Vector2( 200, 120 )
+
+[node name="TextObject7" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "1.00"
+HAlign = 1
+VAlign = 1
+Position = Vector2( 130, 40 )
+TextColor = Color( 0.87451, 0.270588, 0.270588, 1 )
+
+[node name="TextObject6" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "1.00"
+HAlign = 1
+VAlign = 1
+Position = Vector2( 130, 200 )
+TextColor = Color( 0.294118, 0.647059, 0.364706, 1 )
+
+[node name="TextObject5" type="Node" parent="Plane2DRenderer/Plane2DRenderer"]
+script = ExtResource( 2 )
+TextFont = SubResource( 2 )
+Text = "1.00"
+HAlign = 1
+VAlign = 1
+Position = Vector2( 200, 190 )
 
 [node name="Input1" type="HSlider" parent="."]
-margin_left = 250.0
-margin_top = 472.0
-margin_right = 540.0
-margin_bottom = 488.0
+margin_left = 147.872
+margin_top = 481.215
+margin_right = 437.872
+margin_bottom = 497.215
 max_value = 1.0
 allow_greater = true
 allow_lesser = true
@@ -250,11 +268,12 @@ __meta__ = {
 }
 
 [node name="Input2" type="HSlider" parent="."]
-margin_left = 250.0
-margin_top = 632.0
-margin_right = 540.0
-margin_bottom = 648.0
+margin_left = 147.872
+margin_top = 641.215
+margin_right = 437.872
+margin_bottom = 657.215
 max_value = 1.0
+value = 1.0
 allow_greater = true
 allow_lesser = true
 __meta__ = {
@@ -262,13 +281,14 @@ __meta__ = {
 }
 
 [node name="Input3" type="HSlider" parent="."]
-margin_left = 660.0
-margin_top = 430.0
-margin_right = 950.0
-margin_bottom = 446.0
-min_value = -5.0
-max_value = 5.0
-step = 0.001
+margin_left = 557.872
+margin_top = 439.215
+margin_right = 847.872
+margin_bottom = 455.215
+min_value = -2.0
+max_value = 2.0
+step = 0.1
+value = 1.0
 allow_greater = true
 allow_lesser = true
 __meta__ = {
@@ -276,13 +296,14 @@ __meta__ = {
 }
 
 [node name="Input4" type="HSlider" parent="."]
-margin_left = 660.0
-margin_top = 674.0
-margin_right = 950.0
-margin_bottom = 690.0
-min_value = -5.0
-max_value = 5.0
-step = 0.001
+margin_left = 557.872
+margin_top = 683.215
+margin_right = 847.872
+margin_bottom = 699.215
+min_value = -2.0
+max_value = 2.0
+step = 0.1
+value = 1.0
 allow_greater = true
 allow_lesser = true
 __meta__ = {
@@ -290,13 +311,14 @@ __meta__ = {
 }
 
 [node name="Input5" type="HSlider" parent="."]
-margin_left = 811.0
-margin_top = 622.0
-margin_right = 1101.0
-margin_bottom = 638.0
-min_value = -5.0
-max_value = 5.0
-step = 0.001
+margin_left = 708.872
+margin_top = 631.215
+margin_right = 998.872
+margin_bottom = 647.215
+min_value = -2.0
+max_value = 2.0
+step = 0.1
+value = 1.0
 allow_greater = true
 allow_lesser = true
 __meta__ = {

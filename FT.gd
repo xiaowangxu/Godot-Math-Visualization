@@ -27,6 +27,6 @@ func _process(delta):
 		vector.PositionTo = lastpos
 		i += 1
 	var Target : Vector2 = $Coordinate2DObject.Rect.size/2.0 - $Coordinate2DObject.get_AbosulteLocalPosition(lastpos)
-#	$Coordinate2DObject.Center = Vector2(lerp($Coordinate2DObject.Center.x, Target.x, 0.05), lerp($Coordinate2DObject.Center.y, Target.y, 0.05))
+	$Coordinate2DObject.Center = Vector2(lerp($Coordinate2DObject.Center.x, Target.x, 0.05), lerp($Coordinate2DObject.Center.y, Target.y, 0.05))
 	b += delta * 0.5
 	pass
