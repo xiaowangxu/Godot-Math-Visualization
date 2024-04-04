@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Object/TextObject.gd" type="Script" id=1]
+[ext_resource path="res://Object/VboxRenderer.gd" type="Script" id=2]
+[ext_resource path="res://Font/AGENCYB.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Object/2DDrawLineObject.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VBoxRenderer" type="Node2D" parent="."]
+position = Vector2( 162.672, 123.736 )
+script = ExtResource( 2 )
+Rect = Rect2( 0, 0, 709, 440 )
+Center = Vector2( 0, 0 )
+Clip = false
+HAlign = 0
+
+[node name="TextObject" type="Node" parent="VBoxRenderer"]
+script = ExtResource( 1 )
+TextFont = SubResource( 1 )
+Text = "abcdefg"
+VAlign = 0
+
+[node name="TextObject2" type="Node" parent="VBoxRenderer"]
+script = ExtResource( 1 )
+TextFont = SubResource( 1 )
+Text = "abcdefg"
+VAlign = 0
+
+[node name="TextObject3" type="Node" parent="VBoxRenderer"]
+script = ExtResource( 1 )
+TextFont = SubResource( 1 )
+Text = "abcdefgsqwwqwsqsw"
+VAlign = 0
+
+[node name="TextObject4" type="Node" parent="VBoxRenderer"]
+script = ExtResource( 1 )
+TextFont = SubResource( 1 )
+Text = "abcdefgcds"
+VAlign = 0
+
+[node name="DrawLine2DObject" type="Node" parent="VBoxRenderer"]
+script = ExtResource( 4 )
+Points = PoolVector2Array( 0.234, 0, 100, 100.23 )
+LineWidth = 20.0
+LineColor = Color( 1, 1, 0, 1 )
+
+[node name="VBoxRenderer2" type="Node2D" parent="VBoxRenderer"]
+position = Vector2( 0, 196 )
+script = ExtResource( 2 )
+Rect = Rect2( 0, 0, 709, 244 )
+Center = Vector2( 0, 0 )
+Clip = false
+HAlign = 2
+
+[node name="TextObject" type="Node" parent="VBoxRenderer/VBoxRenderer2"]
+script = ExtResource( 1 )
+TextFont = SubResource( 1 )
+Text = "testyuteyu"
+VAlign = 0
+
+[node name="TextObject2" type="Node" parent="VBoxRenderer/VBoxRenderer2"]
+script = ExtResource( 1 )
+TextFont = SubResource( 1 )
+Text = "abcdefg"
+VAlign = 0
+
+[node name="TextObject3" type="Node" parent="VBoxRenderer/VBoxRenderer2"]
+script = ExtResource( 1 )
+TextFont = SubResource( 2 )
+Text = "abcdefgsqwwqwsqswdcsd"
+VAlign = 0
+
+[node name="TextObject4" type="Node" parent="VBoxRenderer/VBoxRenderer2"]
+script = ExtResource( 1 )
+TextFont = SubResource( 1 )
+Text = "abcdefg"
+VAlign = 0

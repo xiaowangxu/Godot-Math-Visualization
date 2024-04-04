@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Object/2DCoordinateRenderer.gd"
 }, {
+"base": "SceneObject",
+"class": "DrawArea2DObject",
+"language": "GDScript",
+"path": "res://Object/2DDrawAreaObject.gd"
+}, {
+"base": "SceneObject",
+"class": "DrawLine2DObject",
+"language": "GDScript",
+"path": "res://Object/2DDrawLineObject.gd"
+}, {
 "base": "Resource",
 "class": "Function2DLine",
 "language": "GDScript",
@@ -77,6 +87,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Circle2DObject": "",
 "Coordinate2DRenderer": "",
+"DrawArea2DObject": "",
+"DrawLine2DObject": "",
 "Function2DLine": "",
 "Function2DObject": "",
 "ImageObject": "",
@@ -94,6 +106,8 @@ _global_script_class_icons={
 
 config/name="Godot Math Visualization"
 run/main_scene="res://Node2D.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [debug]

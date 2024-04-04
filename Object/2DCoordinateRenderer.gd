@@ -9,8 +9,8 @@ export var LineWidth : float = 2.0 setget set_LineWidth
 export var RuleWidth : float = 10 setget set_RuleWidth
 export var LineColor : Color = Color.white setget set_LineColor
 export var Aspect : Vector2 = Vector2.ONE setget set_Aspect
-export var AspectXUnit : String = ""
-export var AspectYUnit : String = ""
+export var AspectXUnit : String = "" setget set_AspectXUnit
+export var AspectYUnit : String = "" setget set_AspectYUnit
 export var RemainLineX : bool = true setget set_RemainLineX
 export var RemainLineY : bool = true setget set_RemainLineY
 export(Font) var RuleFont : Font = null
@@ -60,7 +60,7 @@ func _draw() -> void:
 		if i!=0 or linecenter.y != Center.y:
 			var positionx : float = Rect.position.x + linecenter.x
 			if RuleFont != null:
-				var string : String = str(i*Aspect.y) if AspectYUnit=="" else str(i)+AspectYUnit
+				var string : String = str(i*Aspect.y) if AspectYUnit=="" else ("-" if i == -1 else "") + (str(i) if i != 1 and i != -1 else "") + AspectYUnit
 				var strsize : Vector2 = RuleFont.get_string_size(string)
 				self.draw_string(RuleFont, Vector2(positionx + RuleWidth if Center.x > Rect.size.x / 2.0 else positionx - RuleWidth - strsize.x, positiony + strsize.y / 2.0 - RuleFont.get_descent()), string, LineColor)
 			self.draw_line(Vector2(positionx - RuleWidth/2.0, positiony), Vector2(positionx + RuleWidth / 2.0, positiony), LineColor, LineWidth, true)
@@ -70,7 +70,7 @@ func _draw() -> void:
 		if (i!=0 or linecenter.x != Center.x):
 			var positiony : float = Rect.position.y + linecenter.y
 			if RuleFont != null:
-				var string : String = str(-i*Aspect.x) if AspectXUnit=="" else str(-i) + AspectXUnit
+				var string : String = str(-i*Aspect.x) if AspectXUnit=="" else ("-" if -i == -1 else "") + (str(-i) if i != 1 and i != -1 else "") + AspectXUnit
 				var strsize : Vector2 = RuleFont.get_string_size(string)
 				self.draw_string(RuleFont, Vector2(positionx - strsize.x / 2.0, positiony + RuleFont.get_descent() - RuleWidth - strsize.y / 2.0 if Center.y < Rect.size.y / 2.0 else positiony + RuleFont.get_descent() + RuleWidth + strsize.y / 2.0) , string, LineColor)
 			self.draw_line(Vector2(positionx, positiony - RuleWidth/2.0), Vector2(positionx, positiony + RuleWidth/2.0), LineColor, LineWidth, true)
@@ -130,6 +130,16 @@ func set_LineColor(linecolor : Color) -> void:
 	update_Renderer()
 	pass
 	
+func set_AspectXUnit(string : String) -> void:
+	AspectXUnit = string
+	update_Renderer()
+	pass
+
+func set_AspectYUnit(string : String) -> void:
+	AspectYUnit = string
+	update_Renderer()
+	pass
+
 func set_RemainLineX(remain : bool) -> void:
 	RemainLineX = remain
 	update_Renderer()

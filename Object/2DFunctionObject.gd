@@ -4,8 +4,8 @@ tool
 
 class_name Function2DObject
 
-export var Function : Resource
-export var FunctionRange : Vector2 = Vector2(-100,100)
+export var Function : Resource setget set_Function
+export var FunctionRange : Vector2 = Vector2(-100,100) setget set_FunctionRange
 export var StepCount : int = 100 setget set_StepCount
 export var LineWidth : float = 4.0 setget set_LineWidth
 export var LineColor : Color = Color.rebeccapurple setget set_LineColor
@@ -40,7 +40,17 @@ func draw(canvas : Node2D, rect : Rect2, scale : Vector2, center : Vector2) -> v
 	if not points.size() < 2:
 		canvas.draw_polyline(points, LineColor, LineWidth, true)
 	pass
-	
+
+func set_Function(function) -> void:
+	Function = function
+	update_Parent()
+	pass
+
+func set_FunctionRange(ranges : Vector2) -> void:
+	FunctionRange = ranges
+	update_Parent()
+	pass
+
 func set_StepCount(stepcount : int) -> void:
 	StepCount = stepcount
 	update_Parent()

@@ -8,7 +8,7 @@ var vectorlist : Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in range(20):
+	for i in range(100):
 		var vector : Vector2DObject = Vector2DObject.new()
 		vector.LineWidth = 3/(i+1)
 		vector.TipWidth = 30/(i+1)
@@ -23,10 +23,13 @@ func _process(delta):
 	var i : int = 1
 	for vector in vectorlist:
 		vector.PositionFrom = lastpos
-		lastpos += Vector2(cos(b*i)*3/i, sin(b*i)*3/i)
+		lastpos += Vector2(cos(b*i)*1/i, sin(b*i)*1/i)
 		vector.PositionTo = lastpos
 		i += 1
 	var Target : Vector2 = $Coordinate2DObject.Rect.size/2.0 - $Coordinate2DObject.get_AbosulteLocalPosition(lastpos)
-	$Coordinate2DObject.Center = Vector2(lerp($Coordinate2DObject.Center.x, Target.x, 0.05), lerp($Coordinate2DObject.Center.y, Target.y, 0.05))
+	$Coordinate2DObject/DrawArea2DObject.add_Point(lastpos)
+	if $Coordinate2DObject/DrawArea2DObject.Points.size() > 500:
+		$Coordinate2DObject/DrawArea2DObject.remove_Point(0)
+#	$Coordinate2DObject.Center = Vector2(lerp($Coordinate2DObject.Center.x, Target.x, 0.05), lerp($Coordinate2DObject.Center.y, Target.y, 0.05))
 	b += delta * 0.5
 	pass

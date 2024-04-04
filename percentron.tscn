@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://SCHLBKI.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Object/TextObject.gd" type="Script" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://percentron.gd" type="Script" id=8]
 [ext_resource path="res://Font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Object/2DCoordinateRenderer.gd" type="Script" id=10]
-[ext_resource path="res://Linear.tres" type="Resource" id=11]
+[ext_resource path="res://Resource/Linear.gd" type="Script" id=11]
 [ext_resource path="res://Object/2DFunctionObject.gd" type="Script" id=12]
 [ext_resource path="res://Object/2DPointObject.gd" type="Script" id=13]
 
@@ -19,6 +19,12 @@ size = 100
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 11 )
+w1 = 2.0
+w2 = 2.0
+b = 1.0
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -61,11 +67,9 @@ RuleFont = ExtResource( 9 )
 
 [node name="Function2D" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
 script = ExtResource( 12 )
-Function = ExtResource( 11 )
-FunctionRange = Vector2( -100, 100 )
-StepCount = 100
-LineWidth = 3.0
-LineColor = Color( 1, 0.698039, 0, 1 )
+Function = SubResource( 3 )
+LineWidth = 2.0
+LineColor = Color( 0.839216, 0.188235, 0.188235, 1 )
 
 [node name="Point2DObject" type="Node" parent="Plane2DRenderer/Coordinate2DRenderer"]
 script = ExtResource( 13 )

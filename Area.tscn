@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Object/2DCoordinateRenderer.gd" type="Script" id=1]
-[ext_resource path="res://FT.gd" type="Script" id=2]
+[ext_resource path="res://Object/2DFunctionObject.gd" type="Script" id=2]
 [ext_resource path="res://Object/2DDrawAreaObject.gd" type="Script" id=3]
 [ext_resource path="res://Font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Linear.tres" type="Resource" id=5]
+[ext_resource path="res://Area.gd" type="Script" id=6]
 
 [sub_resource type="Animation" id=1]
 length = 11.0
@@ -22,30 +24,30 @@ tracks/0/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 6 )
 
 [node name="Coordinate2DObject" type="Node2D" parent="."]
 position = Vector2( 50, 50 )
 script = ExtResource( 1 )
-Rect = Rect2( 0, 0, 1820, 980 )
-Center = Vector2( 909.997, 490 )
-Clip = true
-Scale = Vector2( 227.273, 227.273 )
+Rect = Rect2( 0, 0, 1800, 1000 )
+Center = Vector2( 600, 500 )
 LineWidth = 1.0
-RuleWidth = 30.0
-LineColor = Color( 1, 1, 1, 1 )
-Aspect = Vector2( 1, 1 )
-AspectXUnit = ""
-AspectYUnit = ""
-RemainLineX = true
-RemainLineY = true
+RuleWidth = 25.0
 RuleFont = ExtResource( 4 )
 
 [node name="DrawArea2DObject" type="Node" parent="Coordinate2DObject"]
 script = ExtResource( 3 )
-Points = PoolVector2Array(  )
-LineWidth = 10.0
-LineColor = Color( 1, 1, 0, 1 )
+Points = PoolVector2Array( 0, 0, 0, 10, 10, 0 )
+LineColor = Color( 0.839216, 0.188235, 0.188235, 0.27451 )
+
+[node name="Function2DObject" type="Node" parent="Coordinate2DObject"]
+script = ExtResource( 2 )
+Function = ExtResource( 5 )
+FunctionRange = Vector2( -15, 30 )
+StepCount = 500
+LineWidth = 5.0
+LineColor = Color( 0.839216, 0.188235, 0.188235, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "新建动画"
 "anims/新建动画" = SubResource( 1 )
